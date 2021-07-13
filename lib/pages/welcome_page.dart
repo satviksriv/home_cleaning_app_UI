@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:home_cleaning_ui/color_scheme.dart';
+import 'package:home_cleaning_ui/constants/color_scheme.dart';
 import 'package:home_cleaning_ui/pages/your_plan.dart';
 
 class WelcomePage extends StatelessWidget {
