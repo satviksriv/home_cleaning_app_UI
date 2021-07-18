@@ -13,15 +13,7 @@ class _YourPlanState extends State<YourPlan> {
   // bool checkBoxValue = false;
   bool shouldCheck = false;
   bool shouldCheckDefault = false;
-  Color container1 = Colors.white;
-  Color container2 = Colors.white;
-  Color container3 = Colors.white;
-  Color text1 = Colors.grey;
-  Color text2 = Colors.grey;
-  Color text3 = Colors.grey;
-  bool press1 = false;
-  bool press2 = false;
-  bool press3 = false;
+  String selectedFrequency = "Monthly";
 
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -181,21 +173,31 @@ class _YourPlanState extends State<YourPlan> {
                       Expanded(
                         child: InkWell(
                           onTap: () {
-                            press1 = true;
-                            change();
+                            changeFrequency("Weekly");
                           },
                           child: Container(
-                            decoration: BoxDecoration(
-                              color: container1,
-                              border: Border.all(width: 1, color: Colors.grey),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                            ),
+                            decoration: (selectedFrequency == "Weekly")
+                                ? BoxDecoration(
+                                    color: pinkButton,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                  )
+                                : BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(
+                                        width: 1, color: Colors.grey),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                  ),
                             height: 45,
                             child: Center(
                               child: Text(
                                 "Weekly",
-                                style: TextStyle(color: text1),
+                                style: TextStyle(
+                                  color: (selectedFrequency == "Weekly")
+                                      ? Colors.white
+                                      : Colors.grey,
+                                ),
                               ),
                             ),
                           ),
@@ -205,21 +207,31 @@ class _YourPlanState extends State<YourPlan> {
                       Expanded(
                         child: InkWell(
                           onTap: () {
-                            press2 = true;
-                            change();
+                            changeFrequency("Bi-Weekly");
                           },
                           child: Container(
-                            decoration: BoxDecoration(
-                              color: container2,
-                              border: Border.all(width: 1, color: Colors.grey),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                            ),
+                            decoration: (selectedFrequency == "Bi-Weekly")
+                                ? BoxDecoration(
+                                    color: pinkButton,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                  )
+                                : BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(
+                                        width: 1, color: Colors.grey),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                  ),
                             height: 45,
                             child: Center(
                               child: Text(
                                 "Bi-Weekly",
-                                style: TextStyle(color: text2),
+                                style: TextStyle(
+                                  color: (selectedFrequency == "Bi-Weekly")
+                                      ? Colors.white
+                                      : Colors.grey,
+                                ),
                               ),
                             ),
                           ),
@@ -229,21 +241,31 @@ class _YourPlanState extends State<YourPlan> {
                       Expanded(
                         child: InkWell(
                           onTap: () {
-                            press3 = true;
-                            change();
+                            changeFrequency("Monthly");
                           },
                           child: Container(
-                            decoration: BoxDecoration(
-                              color: container3,
-                              border: Border.all(width: 1, color: Colors.grey),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                            ),
+                            decoration: (selectedFrequency == "Monthly")
+                                ? BoxDecoration(
+                                    color: pinkButton,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                  )
+                                : BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(
+                                        width: 1, color: Colors.grey),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                  ),
                             height: 45,
                             child: Center(
                               child: Text(
                                 "Monthly",
-                                style: TextStyle(color: text3),
+                                style: TextStyle(
+                                  color: (selectedFrequency == "Monthly")
+                                      ? Colors.white
+                                      : Colors.grey,
+                                ),
                               ),
                             ),
                           ),
@@ -260,36 +282,8 @@ class _YourPlanState extends State<YourPlan> {
     );
   }
 
-  void change() {
-    if (press1 == true) {
-      setState(() {
-        text1 = Colors.white;
-        container1 = pinkButton;
-        text2 = Colors.grey;
-        container2 = Colors.white;
-        text3 = Colors.grey;
-        container3 = Colors.white;
-      });
-    }
-    if (press2 == true) {
-      setState(() {
-        text2 = Colors.white;
-        container2 = pinkButton;
-        text1 = Colors.grey;
-        container1 = Colors.white;
-        text3 = Colors.grey;
-        container3 = Colors.white;
-      });
-    }
-    if (press3 == true) {
-      setState(() {
-        text3 = Colors.white;
-        container3 = pinkButton;
-        text1 = Colors.grey;
-        container1 = Colors.white;
-        text2 = Colors.grey;
-        container2 = Colors.white;
-      });
-    }
+  void changeFrequency(String s) {
+    selectedFrequency = s;
+    setState(() {});
   }
 }
