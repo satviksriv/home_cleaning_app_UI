@@ -41,7 +41,7 @@ class _YourPlanState extends State<YourPlan> {
           ),
           title: Text(
             "Your Plan",
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
           ),
           backgroundColor: bgColor,
           centerTitle: true,
