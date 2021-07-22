@@ -25,6 +25,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   custom_check_box: ^0.0.4
+  table_calendar: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -43,7 +44,6 @@ flutter:
   assets:
     - assets/image/
     - assets/image/icons/
-    # - assets/image/icons/fridge.png
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
